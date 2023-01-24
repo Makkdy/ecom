@@ -79,7 +79,7 @@ def signout(request, id):
         user = UserModel.objects.get(pk=id)
         user.session_token = '0'
         user.save()
-        #logout doesn't matter its position
+        #logout doesn't matter its position only need 1 argument request
         logout(request)
         #  return the sucess message
         return JsonResponse({'success':'Logout success'})
